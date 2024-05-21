@@ -1,0 +1,4 @@
+django
+django-mathfilters
+django-crispy-forms
+django-widget-tweaks

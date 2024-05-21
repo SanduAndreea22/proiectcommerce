@@ -1,0 +1,196 @@
+{% extends "./base.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<style>
+
+    body
+    {
+
+        background-color: rgb(0, 0, 0);
+        background-image: url("https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: cover;
+
+    }
+
+
+</style>
+
+
+    <body>
+
+        <br>
+
+        <div class="container bg-white shadow-md p-5" style="width:500px; border-radius:20px;">
+
+            <form id="form">
+
+                <div>
+
+                    <h3 style="color: black;"> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Complete your order </h3>
+
+                    <p style="color: black;"> Please enter in the relevant information below. </p>
+
+
+
+                    <hr>
+
+                    <br>
+
+                    <div class="form-field">
+
+                        <input class="form-control validate" id="name" type="text" placeholder="Full name*" autocomplete="off" value="" required>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="form-field">
+
+                        <input class="form-control validate" id="email" type="email" placeholder="Email address*" autocomplete="off" value="" required>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="form-field">
+
+                        <input class="form-control validate" id="address" type="text" placeholder="Address*" autocomplete="off" value="" required>
+
+                    </div>
+
+
+
+                    <br>
+
+
+                    <div class="form-field">
+
+                        <input class="form-control validate" id="country" type="text" placeholder="Country*" autocomplete="off" value="" required>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="form-field">
+
+                        <input class="form-control" id="city" type="text" placeholder="City*" autocomplete="off" value="" required>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="form-field">
+
+                        <input class="form-control" id="zipcode" type="text" placeholder="Zipcode" autocomplete="off" value="">
+
+                    </div>
+
+                    <br>
+
+                    <div class="form-field">
+
+                        <input class="form-control" id="phone" type="text" placeholder="Phone number" autocomplete="off" value="">
+
+                    </div>
+
+                </div>
+
+                <br>
+
+
+
+               <button id="complete-order" type="submit" class="btn btn-primary navbar-btn text-white"> &nbsp; Complete order </button>
+
+
+                <br>
+
+
+
+
+            </form>
+
+
+        </div>
+
+
+
+        <br>
+
+
+    </body>
+
+
+
+
+    {% csrf_token %}
+    <script>
+
+    var total_price = '{{cart.get_total}}';
+
+
+    $(document).on('submit',  function(e){
+
+        e.preventDefault();
+
+        $.ajax({
+
+            type: 'POST',
+            url: '{% url "complete-order" %}',
+            data: {
+
+                name: $('#name').val(),
+                email: $('#email').val(),
+
+                address: $('#address').val(),
+
+                country: $('#country').val(),
+                city: $('#city').val(),
+
+                zipcode: $('#zipcode').val(),
+                phone: $('#phone').val(),
+
+
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+
+            },
+
+            success: function(json){
+
+                window.location.replace("{% url 'order-success' %}");
+
+
+            },
+
+            error: function(xhr, errmsg, err){
+
+
+            }
+
+        });
+
+
+    })
+
+
+
+   </script>
+
+
+
+
+
+{% endblock %}

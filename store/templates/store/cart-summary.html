@@ -1,0 +1,15 @@
+{% for item in cart %}
+    <div class="row mb-4 border product-item">
+        <div class="col-md-12">
+            <h5>{{ item.perfum.title }}</h5>
+            <p>{{ item.perfum.price }} RON</p>
+        </div>
+    </div>
+{% endfor %}
+
+<div class="col-12 text-end">
+    <div class="h6 fw-bold"> Sub total: RON {{ total_price }} </div>
+    <br>
+    <a href="{% url 'checkout' %}" class="btn btn-primary my-2"> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Proceed to checkout </a>
+</div>
+
