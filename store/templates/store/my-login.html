@@ -1,90 +1,35 @@
 {% extends "./base.html" %}
 {% load crispy_forms_tags %}
-
-
 {% load static %}
-
-
-
 {% block content %}
-
     <style>
-
-
         body{
-
-
             background-color: rgb(0, 0, 0);
             background-image: url("https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
             background-size: cover;
-
-        }
-
-
-
+       }
     </style>
-
-
-
-
     <body>
-
         <br>
-
         <div class="container bg-white shadow-md p-5 form-layout" style="width:500px; border-radius:20px;">
-
             <h3 style="color: black;"> Login to your account </h3>
-
             <hr>
-
             <br>
-
             <form method="POST" autocomplete="off">
-
                 {% csrf_token %}
-
                 {{form.username|as_crispy_field}}
-
-
                 <br>
-
-
                 {{form.password|as_crispy_field}}
-
                 <br>
-
-
                 <button type="submit" class="btn btn-primary navbar-btn text-white w-100 p-2"> <i class="fa fa-key" aria-hidden="true"></i> &nbsp; Login </button>
-
                 <br> <br>
-
                 {{form.non_field_errors}}
-
                 <div class="text-center">
-
                     <a href="{% url 'register' %}"> Don't have an account? </a>
-
-
                     <br> <br>
-
-
                 </div>
-
-
             </form>
-
-
-
-
-
         </div>
-
-
-
     </body>
-
     <br> <br>
-
-
 {% endblock %}
-

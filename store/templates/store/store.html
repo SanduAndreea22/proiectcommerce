@@ -1,135 +1,57 @@
 {{% extends "./base.html" %}
-
 {% load static %}
-
-
 {% block content %}
-
 <style>
-
-
   body{
-
-
       background-color: rgb(0, 0, 0);
       background-image: url("https://wallpaperaccess.com/full/6553651.jpg");
       background-size: cover;
       background-position: center;
-
-
   }
-
-
-
 </style>
-
     <!-- Introduction section -->
-
     <section class="py-4 text-center container">
-
         <div class="row py-lg-5">
-
             <div class="col-lg-6 col-md-8 mx-auto">
-
-
                 <h4> Hi! Welcome to my perfumstore! </h4>
-
-
                 <br>
-
-
                 <p class="lead text-white">
-
                 Browse and shop the extensive collection of perfums.
-
                 </p>
-
-
                 <br>
-
                 {% if user.is_authenticated %}
-
                 <br>
-
                  {% else %}
-
                  <a href="{% url 'register' %}" class="btn btn-primary my-2" style="background-color: blueviolet;"> Create an account </a>
-
                  {% endif %}
-
-
             </div>
-
         </div>
-
-
     </section>
-
     <!-- All products section -->
-
     <div class="album py-5 bg-light">
-
         <div class="container">
-
           <div class="pb-3 h5"> All perfums </div>
-
-
           <hr>
-
           <br>
-
-
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
-            {% for perfum in perfums %}
-
-             <div class="col">
-
-               <div class="card shadow-sm">
-
-                 <img class="img-fluid" alt="Responsive image" src="{{perfum.image}}">
-
-                 <div class="card-body">
-
-                   <p class="card-text">
-
-                     <h4></h4><a href="{% url 'perfum-info' perfum.slug %}"> {{perfum.title | capfirst}}  </a></h4>
-
-
-
-
-                   </p>
-
-                   <div class="d-flex justify-content-between align-items-center">
-
-                     <h5> {{perfum.price}} RON </h5>
-
-                   </div>
-
-                 </div>
-
-               </div>
-
-             </div>
-
-
-             {% endfor %}
-
-
-
-
-
-
-
-
-
-          </div>
-
+{% for perfum in perfums %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ perfum.name | capfirst }}</h5>
+                <p class="card-text">{{ perfum.description }}</p>
+                <p class="card-text">Preț: {{ perfum.price }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Detalii</button>
+                        <button id="add-button" value="{{ perfum.id }}" class="btn btn-sm btn-outline-secondary">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
+    </div>
+{% endfor %}
+             </div>
+        </div>
       </div>
-
-
-
-
 {% endblock %}
