@@ -1,5 +1,6 @@
 **Andreea's PerfumStore**
 
+![Screenshot 2024-05-26 221716](https://github.com/SanduAndreea22/proiectcommerce/assets/144158945/1f0e3406-6a99-4330-b928-0861f4f459cf)
 
 ***Descriere:***
 
