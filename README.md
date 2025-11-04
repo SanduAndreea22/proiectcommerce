@@ -1,74 +1,132 @@
-**Andreea's PerfumStore**
 
 ![Screenshot 2024-05-26 221716](https://github.com/SanduAndreea22/proiectcommerce/assets/144158945/1f0e3406-6a99-4330-b928-0861f4f459cf)
 
-***Descriere:***
+# Andreea's PerfumStore 🛍️🌸
 
-Bine ai venit la Andreea's PerfumStore! Acest proiect este un magazin online de parfumuri dezvoltat în Django Python. Aici găsești un univers aromatic de parfumuri excepționale, oferind o experiență captivantă și accesibilă pentru achiziționarea parfumurilor preferate.
+![Screenshot](img/screenshot-2024-05-26-221716.png)
 
-***Caracteristici***:
+Bine ai venit la **Andreea's PerfumStore**!
+Acest proiect este un **magazin online de parfumuri** dezvoltat în **Django Python**. Oferă o experiență captivantă pentru achiziționarea parfumurilor preferate, într-un univers aromatic elegant și accesibil. 💖
 
-🛍️ **Navigare în Magazin**
-   - Funcția store(request) afișează lista de parfumuri disponibile în magazin.
+---
 
-💼 **Informații Despre Parfumuri**
-   - Funcția perfum_info(request, slug) afișează detalii despre un anumit parfum pe baza slug-ului acestuia.
+## 🌟 Caracteristici principale
 
-🛒 **Gestionarea Coșului de Cumpărături**
-   - Există funcții pentru adăugarea, actualizarea și ștergerea produselor din coșul de cumpărături (cart_add(request, id), cart_update(request), cart_delete(request)).
-   - Funcția cart_summary(request) afișează un rezumat al coșului de cumpărături.
+### 🛍️ Navigare în Magazin
 
-📦 **Finalizarea Comenzii**
-   - Funcțiile checkout(request) și complete_order(request) permit utilizatorilor să finalizeze comanda și să completeze informațiile despre livrare și plată.
+* `store(request)` afișează lista de parfumuri disponibile.
 
-🔐 **Autentificare și Autorizare**
-   - Există funcții pentru înregistrare (register(request)), autentificare (my_login(request)), deconectare (user_logout(request)) și afișarea unui panou de control (dashboard(request)).
+### 💼 Informații Despre Parfumuri
 
-📋 **Urmărirea Comenzilor**
-   - Funcția track_orders(request) permite utilizatorilor autentificați să urmărească comenzile lor.
+* `perfum_info(request, slug)` afișează detalii despre un anumit parfum.
 
-🔑 **Gestionarea Sesiunii**
-   - Funcția order_success(request) șterge cheile de sesiune după finalizarea cu succes a unei comenzi.
+### 🛒 Gestionarea Coșului de Cumpărături
 
-***Tehnologii si instrumente***:
+* `cart_add(request, id)` — adăugare produs în coș
+* `cart_update(request)` — actualizare cantitate produs
+* `cart_delete(request)` — ștergere produs din coș
+* `cart_summary(request)` — afișare rezumat coș
 
-🛠️ **Django Framework**
-   - Utilizat pentru dezvoltarea backend-ului și a funcționalităților principale ale aplicației web.
+### 📦 Finalizarea Comenzii
 
-💻 **Python Programming Language**
-   - Limbajul de programare principal folosit pentru implementarea logică și a funcționalităților.
+* `checkout(request)` și `complete_order(request)` — finalizează comanda și completează informațiile despre livrare și plată.
 
-🌐 **HTML, CSS, JavaScript**
-   - Folosite pentru dezvoltarea frontend-ului, pentru a crea interfețe utilizator prietenoase și interactive.
+### 🔐 Autentificare și Autorizare
 
-📦 **Django Templates**
-   - Utilizate pentru generarea paginilor HTML dinamic, bazate pe datele preluate din backend.
+* `register(request)` — înregistrare utilizator
+* `my_login(request)` — autentificare
+* `user_logout(request)` — deconectare
+* `dashboard(request)` — panou de control utilizator
 
-🔐 **Django Authentication System**
-   - Folosit pentru gestionarea autentificării și autorizării utilizatorilor în aplicație.
+### 📋 Urmărirea Comenzilor
 
-🛒 **Django Sessions**
-   - Utilizate pentru gestionarea sesiunilor utilizatorilor și a coșului de cumpărături.
+* `track_orders(request)` — urmărire comenzi pentru utilizatori autentificați
 
-Acestea sunt tehnologiile și instrumentele principale utilizate în dezvoltarea Andreea's PerfumStore, care au contribuit la crearea unei aplicații web robuste și eficiente!
+### 🔑 Gestionarea Sesiunii
 
-***Instrucțiuni de Utilizare:***
+* `order_success(request)` — curățarea cheilor de sesiune după finalizarea comenzii
 
-1. **Deschide terminalul în PyCharm**
+---
 
-2. Rulează comanda **`git clone <url_proiect_git>`**, înlocuind `<url_proiect_git>` cu URL-ul proiectului de pe GitHub. Aceasta va clona întregul proiect în directorul curent.
+## 🛠️ Tehnologii și instrumente
 
-3. Rulează comanda **python -m venv env** pentru a crea un mediu virtual numit "env". Acest mediu virtual va izola dependințele proiectului pentru a evita conflictele cu alte proiecte Python.
+* **Django Framework** – backend robust și funcționalități principale
+* **Python** – logică și funcționalități aplicație
+* **HTML, CSS, JavaScript** – frontend interactiv și responsive
+* **Django Templates** – generare pagini HTML dinamice
+* **Django Authentication** – gestionare autentificare și autorizare
+* **Django Sessions** – gestionare sesiuni și coș de cumpărături
 
-4. Pentru a activa mediu virtual, ruleaza comanda: 
-   - Pe Windows: Rulează comanda **env\Scripts\activate**
-   - Pe Linux/Mac: Rulează comanda **source env/bin/activate** 
+---
 
-5. Rulează comanda **pip install -r requirements.txt** pentru a instala toate dependințele proiectului. Acest lucru va instala toate modulele Python necesare pentru a rula aplicația.
+## 📌 Instrucțiuni de utilizare
 
-6. Rulează comanda **python manage.py runserver** pentru a porni serverul de dezvoltare Django. Acesta va începe să servească aplicația la adresa `http://127.0.0.1:8000/` sau `http://localhost:8000/`.
+1. Clonează repository-ul:
 
+```bash
+git clone https://github.com/SanduAndreea22/AndreeaSPerfumStore.git
+```
 
+2. Creează un mediu virtual:
 
+```bash
+python -m venv env
+```
 
+3. Activează mediul virtual:
+
+   * Windows: `env\Scripts\activate`
+   * Linux/Mac: `source env/bin/activate`
+
+4. Instalează dependențele:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Pornește serverul Django:
+
+```bash
+python manage.py runserver
+```
+
+6. Deschide browser-ul și navighează la:
+
+```
+http://127.0.0.1:8000/ sau http://localhost:8000/
+```
+
+---
+
+## 🎨 Stil și design
+
+* Fundal cu gradient pastel
+* Carduri parfum cu efect **glass** și hover subtil
+* Butoane cu gradient și animații fine
+* Responsive pentru desktop, tabletă și mobil
+* Confirmare comenzi cu popup animat
+* Prețuri evidențiate și ușor de citit
+
+---
+
+## 🌐 Link-uri utile
+
+* [Cod sursă GitHub](https://github.com/SanduAndreea22/AndreeaSPerfumStore)
+* [Proiect Live / Demo](https://sanduandreea22.github.io/AndreeaSPerfumStore/)
+
+---
+
+## 📄 Licență
+
+Acest proiect este **open-source** și poate fi utilizat pentru portofoliu și uz personal.
+
+---
+
+## 🏆 Badge-uri sugerate pentru README
+
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge\&logo=python\&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
 
