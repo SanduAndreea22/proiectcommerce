@@ -107,12 +107,6 @@ http://127.0.0.1:8000/ sau http://localhost:8000/
 
 ---
 
-## 🌐 Link-uri utile
-
-* [Cod sursă GitHub](https://github.com/SanduAndreea22/AndreeaSPerfumStore)
-* [Proiect Live / Demo](https://sanduandreea22.github.io/AndreeaSPerfumStore/)
-
----
 
 ## 📄 Licență
 
