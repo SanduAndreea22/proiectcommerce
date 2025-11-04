@@ -3,8 +3,6 @@
 
 # Andreea's PerfumStore 🛍️🌸
 
-![Screenshot](img/screenshot-2024-05-26-221716.png)
-
 Bine ai venit la **Andreea's PerfumStore**!
 Acest proiect este un **magazin online de parfumuri** dezvoltat în **Django Python**. Oferă o experiență captivantă pentru achiziționarea parfumurilor preferate, într-un univers aromatic elegant și accesibil. 💖
 
